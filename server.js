@@ -29,7 +29,7 @@ const resolvers = {
     quotes :()=>quotes
   },
   User:{
-       quotes :(user)=>quotes.filter((quote)=>by === user.id)
+       quotes :(user)=>quotes.filter((quote)=>quote.by === user.id)
   }
 };
 
