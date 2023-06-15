@@ -1,39 +1,45 @@
 export const users = [
   {
-    id: 1,
-    name: "sakhidad",
+    id: "2113",
+    firstname: "sakhi",
+    lastname:"dad",
     email: "sakhiimam3411@gmail.com",
+    password:"893111"
   },
   {
-    id: 2,
-    name: "noor",
+    id: "2112",
+    firstname: "Noor",
+    lastname:"hassan",
     email: "noor@gmail.com",
+    password:"211311"
   },
   {
-    id:3,
-    name: "humayun",
-    email: "humayun@gmail.com",
+    id: "2123",
+    firstname: "imam",
+    lastname:"buksh",
+    email: "imam@gmail.com",
+    password:"453111"
   },
 ];
 
 
 export const quotes = [
   {
-      description:"this code created by  sakhidad",
-      by:1
+      name:"this code created by  sakhidad",
+      by: "2113"
   },
   {
-    description:"this code created by  sakhidad",
-    by:1
+    name:"this code created by  sakhidad",
+    by: "2113"
   },
   {
-    description:"this code created by  noor",
-    by:2
+    name:"this code created by  noor",
+    by:"2123"
     
   },
   {
-    description:"this code created by  noor",
-    by:3
+    name:"this code created by  noor",
+    by:"2114"
     
   },
 ];

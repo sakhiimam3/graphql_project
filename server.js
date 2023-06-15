@@ -1,37 +1,12 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import { ApolloServerPluginLandingPageLocalDefault, ApolloServerPluginLandingPageProductionDefault } from '@apollo/server/plugin/landingPage/default';
-import { users ,quotes} from './data.js';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
+import {typeDefs} from "./model/userSchemagql.js"
+import {resolvers} from './resolvers/userResolver.js'
 
 
-const typeDefs = `
-  type User {
-    id:ID
-    name:String
-    email:String
-    quotes:[quotes]
-  }
-  
-  type quotes{
-        description :String
-        by:ID
-  }
 
-  type Query {
-    users: [User]
-    quotes:[quotes]
-  }
-`;
 
-const resolvers = {
-  Query: {
-    users: () => users,
-    quotes :()=>quotes
-  },
-  User:{
-       quotes :(user)=>quotes.filter((quote)=>quote.by === user.id)
-  }
-};
 
 const server = new ApolloServer({
   typeDefs,
