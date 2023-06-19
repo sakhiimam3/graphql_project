@@ -1,7 +1,7 @@
 ----------------------->
 query getAllUsers{
  users {
-  id
+  _id
   name
   email
   quotes{
@@ -14,9 +14,9 @@ query getAllUsers{
 
 
 ----------------------------------->
-query getUserByid($userId:ID!) {
- user(id:$userId) {
-    id
+query getUserBy_id($userId:ID!) {
+ user(_id:$userId) {
+    _id
     name
     email   
     quotes {
@@ -47,3 +47,22 @@ query getQuoteByUser($quoteby:ID!) {
     }
 }
 
+
+======================> signup with mongodb database
+mutation  signup($newUser: UserInput){
+ user: createUser(newUser: $newUser) {
+        _id,
+        firstName,
+        lastName,
+        email,
+        password
+  }
+}
+
+
+=>>>>>>>>>>>>>>>>>>>>>>  loign with mongo db 
+mutation login($login: userLoginIn){
+  user:  singInUser(login: $login  ) {
+      token
+    }
+}
